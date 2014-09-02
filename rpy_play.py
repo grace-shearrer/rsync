@@ -99,7 +99,7 @@ ro.r('fame<-transform(fame, condiments=MSC0200+MSC0300+MSC0400)') ##condiments
 
 ###SSB categories one####
 ro.r('fame$ssbcat[fame$SSB<1]<-0') #low
-ro.r('fame$ssbcat[fame$SSB<=1 & fame$SSB<2]<-1') #med
+ro.r('fame$ssbcat[fame$SSB>=1 & fame$SSB<2]<-1') #med
 ro.r('fame$ssbcat[fame$SSB>=2]<-2') #high
 
 ####alternate SSB cats#####
@@ -110,7 +110,7 @@ ro.r('fame$ssbcat2[fame$SSB>2  & fame$SSB<=3]<-3')
 ro.r('fame$ssbcat2[fame$SSB>3]<-4')
 
 
-print(ro.r('head(fame)'))
+print(ro.r('(fame$ssbcat)'))
 
 ro.r('write.table(fame, "calculated.csv", sep=",", row.names=FALSE)')
 
