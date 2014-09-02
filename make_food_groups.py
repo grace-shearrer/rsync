@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep  1 17:35:06 2014
-
-@author: everyonelovesacatholicgirl
-"""
 
 #!/usr/bin/python
 #mean groups based on participant ID
