@@ -26,7 +26,7 @@ for files in allFiles:
     df=pd.read_table(files)
     df.reset_index()
     daya4=df.groupby(['Participant ID'])
-    data5=daya4.aggregate(np.sum)
+    data5=daya4.aggregate(np.mean)
     data5.to_csv(files+'.csv', sep=",")
     print(files+'.csv')
 
