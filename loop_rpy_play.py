@@ -89,7 +89,6 @@ ro.r('fame<-transform(fame, artSSB=BVA0400+BVU0300+BVA0300+BVA0500+BVU0400+BVA01
 
 ro.r('fame<-transform(fame, condiments=MSC0200+MSC0300+MSC0400)') ##condiments
 
-
 ###SSB categories one####
 ro.r('fame$ssbcat[fame$SSB<1]<-0') #low
 ro.r('fame$ssbcat[fame$SSB>=1 & fame$SSB<2]<-1') #med
@@ -102,11 +101,17 @@ ro.r('fame$ssbcat2[fame$SSB>1 & fame$SSB<=2]<-2')
 ro.r('fame$ssbcat2[fame$SSB>2  & fame$SSB<=3]<-3')
 ro.r('fame$ssbcat2[fame$SSB>3]<-4')
 
-
 print(ro.r('(fame$ssbcat)'))
 
-ro.r('write.table(fame, "calculated_foods.csv", sep=",", row.names=FALSE)')
-ro.r('write.table(nutrient, "calc_nut.csv", sep=",", row.names=FALSE)')
+ro.r('myvars <- c("Participant.ID","Gender", "Total.Grams", "Energy..kcal.","Total.Fat..g.","Total.Carbohydrate..g.","Total.Protein..g.","Animal.Protein..g.","Vegetable.Protein..g.","Fructose..g.","Galactose..g.","Glucose..g.","Lactose..g.","Maltose..g.","Sucrose..g.","Starch..g.","Total.Dietary.Fiber..g.","Soluble.Dietary.Fiber..g.","Insoluble.Dietary.Fiber..g.","X..Calories.from.Fat","X..Calories.from.Carbohydrate","X..Calories.from.Protein","Total.Sugars..g.","Added.Sugars..g.")')
+ro.r('new_nutrients <- nutrient[myvars]')
+
+ro.r('new_food <- fame[c(1,170:197)]')
+print(ro.r('head(new_food)'))
+
+
+ro.r('write.table(new_food, "calculated_foods.csv", sep=",", row.names=FALSE)')
+ro.r('write.table(new_nutrients, "calc_nut.csv", sep=",", row.names=FALSE)')
 
 
 df1=pd.read_table("calculated_foods.csv", sep=",")
