@@ -14,9 +14,6 @@ import numpy as np
 import os
 from rpy2.robjects.packages import importr
 import rpy2.robjects as ro
-
-
-
 stats = importr('stats')
 base = importr('base')
 
@@ -112,7 +109,9 @@ ro.r('fame$ssbcat2[fame$SSB>3]<-4')
 
 print(ro.r('(fame$ssbcat)'))
 
-ro.r('write.table(fame, "calculated.csv", sep=",", row.names=FALSE)')
+ro.r('write.table(fame, "calculated_foods.csv", sep=",", row.names=FALSE)')
+
+ro.r('total <- merge(fame,nutrients,by="Participant ID")')
 
 
 
