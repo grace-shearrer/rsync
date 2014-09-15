@@ -6,7 +6,7 @@ import numpy
 import glob
 import os
 
-os.chdir('/Users/everyonelovesacatholicgirl/Desktop/onsets/')
+os.chdir('/Users/poldracklab/Desktop/onsets/')
 
 f=glob.glob('*.log')
 
@@ -24,7 +24,7 @@ for l in f:
   #l is a log file in f  
 #handles is a list of the logfiles  \
 debug_flag = False
-path='/Users/everyonelovesacatholicgirl/Desktop/onsets/output'
+path='/Users/poldracklab/Desktop/onsets/output'
 
 if not os.path.exists(path):
     os.makedirs(path, 0755)
