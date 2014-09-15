@@ -6,8 +6,13 @@ import numpy
 import glob
 import os
 
-os.chdir('/Users/poldracklab/Desktop/onsets/')
+#target_dir=os.getcwd()
 
+subject=raw_input('Please enter subject\'s ID: ')
+#date = raw_input('Please enter date subject was run, format: YYYY-MM-DD: ')
+
+os.chdir('/Users/poldracklab/Desktop/onsets/'+subject)
+#os.chdir('/corral-repl/utexas/poldracklab/data/sugar_brain/onset_logs')
 f=glob.glob('*.log')
 
 
@@ -21,13 +26,16 @@ handles=[]
 
 for l in f:
     handles.append(open(l))  
-  #l is a log file in f  
+
+#l is a log file in f  
 #handles is a list of the logfiles  \
+
 debug_flag = False
-path='/Users/poldracklab/Desktop/onsets/output'
+
+path='/Users/poldracklab/Desktop/onsets/'+subject
 
 if not os.path.exists(path):
-    os.makedirs(path, 0755)
+    os.makedirs(path, 0775)
 
 os.chdir(path)
 
