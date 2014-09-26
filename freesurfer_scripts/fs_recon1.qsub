@@ -1,0 +1,29 @@
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: run_ar23.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N final_recon1_sub40 # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12 # BRENDA CHECK THIS THING OK JESUS YOU WALWAYS DO THIS
+#$ -q normal
+#$ -l h_rt=12:00:00 # SET THE TIME CORRECTLY YOU OMG WHAT WHY?????
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE final_recon1_sub40.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
