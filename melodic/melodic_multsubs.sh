@@ -1,0 +1,10 @@
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_001/model/melodic_design_taste_run01_14.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_001/model/melodic_design_taste_run02_18.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_006/model/melodic_design_taste_run01_22.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_006/model/melodic_design_taste_run02_24.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_007/model/melodic_design_taste_run01_10.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_007/model/melodic_design_taste_run02_12.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_0012/model/melodic_design_taste_run01_8.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_0012/model/melodic_design_taste_run02_10.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_0014/model/melodic_design_taste_run01_18.fsf
+melodic -i /corral-repl/utexas/poldracklab/data/sugar_brain/sb_0014/model/melodic_design_taste_run01_20.fsf
