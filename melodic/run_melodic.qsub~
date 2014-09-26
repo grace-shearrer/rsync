@@ -10,7 +10,7 @@
 #$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
 #$ -pe 1way 120 # Number of subjects x 12
 #$ -q normal #either largemem or normal
-#$ -l h_rt=1:00:00 # Set the time, usually a minimum of 1 hours (hh:mm:ss)
+#$ -l h_rt=1:00:00 # Set the time, usualy a minimum of 1 hours (hh:mm:ss)
 #----------------
 # Job Submission
 #----------------
