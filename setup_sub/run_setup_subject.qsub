@@ -1,0 +1,29 @@
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: run_setup_subject.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_sub_05 # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 24 # Number of subjects x 12
+#$ -q largemem
+#$ -l h_rt=10:00:00 # Set the time, usualy a minimum of 10 hours (hh:mm:ss)
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE run_setup_subject.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "

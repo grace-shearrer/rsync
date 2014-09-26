@@ -1,0 +1,2 @@
+setup_subject.py --keepdata -b /corral-repl/utexas/poldracklab/data --studyname sugar_brain -s sb_0010 --fs-subdir /corral-repl/utexas/poldracklab/data/sugar_brain/freesurfer --dcm2nii --motcorr --betfunc --qa --fm --fsrecon -o
+setup_subject.py --keepdata -b /corral-repl/utexas/poldracklab/data --studyname sugar_brain -s sb_0012 --fs-subdir /corral-repl/utexas/poldracklab/data/sugar_brain/freesurfer --dcm2nii --motcorr --betfunc --qa --fm --fsrecon -o
